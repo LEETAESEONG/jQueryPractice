@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>26.jqueryTraversing2</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      div {
+        padding: 10px;
+        border: 5px solid black;
+        margin: 10px;
+      }
+    </style>
+    <script>
+      $(function () {
+        $("#children_aclass_all").on({
+          click: function () {
+            $(".a").children("*").css({
+              border: "5px solid aquamarine",
+            });
+          },
+        });
+        $("#find_aclass_all").on({
+          click: function () {
+            $(".a").find("*").css({
+              border: "5px solid aquamarine",
+            });
+          },
+        });
+        $("#find_aclass_xclass").on({
+          click: function () {
+            $(".a").find(".x").css({
+              border: "5px solid aquamarine",
+            });
+          },
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Children & Find</h1>
+    <p>children 은 자식만</p>
+    <p>find는 자식의 자식의 자식...</p>
+    <p>parent와 다르게 전부 호출하려면 "*"을 사용해야 한다.</p>
+    <button id="children_aclass_all">aclass children all</button>
+    <button id="find_aclass_all">aclass find all</button>
+    <button id="find_aclass_xclass">find x</button>
+    <div class="a">
+      aclass
+      <div>
+        <div>
+          <div class="x"></div>
+        </div>
+      </div>
+      <div>
+        <div></div>
+      </div>
+      <div></div>
+    </div>
+  </body>
+</html>
