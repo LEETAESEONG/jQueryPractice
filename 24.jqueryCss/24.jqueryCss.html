@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>24.jqueryCss</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function () {
+        $("div").on({
+          mouseover: function () {
+            $("#display1").text($(this).css("background-color"));
+          },
+          // 이거를 또 개선해서 아래와 같이 할 수 있다.
+          //   click: function () {
+          //     $(this)
+          //       .css("background-color", "pink")
+          //       .css("border", "5px solid blue")
+          //       .css("color", "white");
+          //   },
+          click: function () {
+            $(this).css({
+              backgroundColor: "pink", // 또는 "background-color"
+              border: "5px solid blue",
+              color: "white",
+            });
+            // 당연히 하나도 가능
+            // $(this).css({
+            //   backgroundColor: "pink",
+            // });
+          },
+        });
+      });
+    </script>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        box-sizing: border-box;
+        padding: 10px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      #a {
+        background-color: slategrey;
+      }
+      #b {
+        background-color: green;
+      }
+      #c {
+        background-color: fuchsia;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="a">A</div>
+    <div id="b">B</div>
+    <div id="c">C</div>
+    <span id="display1"></span>
+  </body>
+</html>
