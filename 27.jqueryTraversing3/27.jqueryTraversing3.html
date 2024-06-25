@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>27.jqueryTraversing3</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function () {
+        // id와 class를 혼동하지 말것
+        // id = #id
+        // class = .class
+        $("#siblings_e_all").on({
+          click: function () {
+            // "*"과 같음
+            $("#e").siblings().css({
+              border: "5px solid deepskyblue",
+            });
+          },
+        });
+        $("#siblings_e_big").on({
+          click: function () {
+            // "*"과 같음
+            $("#e").siblings("#b, #i, #g").css({
+              border: "5px solid deepskyblue",
+            });
+          },
+        });
+        $("#siblings_e_children").on({
+          click: function () {
+            // "*"과 같음
+            $("#e").siblings().children("*").css({
+              border: "5px solid deepskyblue",
+            });
+          },
+        });
+        $("#next_g").on({
+          click: function () {
+            // 바로 다음 형제
+            $("#g").next().css({
+              border: "5px solid deepskyblue",
+            });
+          },
+        });
+        $("#nextAll_c").on({
+          click: function () {
+            // nextAll("span")
+            // 선택 가능
+            $("#c").nextAll().css({
+              border: "5px solid deepskyblue",
+            });
+          },
+        });
+        $("#nextAll_c_iiclass").on({
+          click: function () {
+            // nextAll("span")
+            // 선택 가능
+            $("#c").nextAll(".ii").css({
+              border: "5px solid deepskyblue",
+            });
+          },
+        });
+        $("#nextUntil_a").on({
+          click: function () {
+            // 선택한 곳 이전까지
+            $("#a").nextUntil("#d").css({
+              border: "5px solid deepskyblue",
+            });
+          },
+        });
+        $("#prev_f").on({
+          click: function () {
+            $("#f").prev().css({
+              border: "5px solid deepskyblue",
+            });
+          },
+        });
+      });
+    </script>
+    <style>
+      div {
+        margin: 10px;
+        padding: 20px 10px;
+        border: 5px solid pink;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>siblings(), next(), nextAll(), nextUntil()</h1>
+    <h1>prev(), prevAll(), prevUntil()</h1>
+    <button id="siblings_e_all">siblings_e_all</button>
+    <button id="siblings_e_big">siblings_e_big</button>
+    <button id="siblings_e_children">siblings_e_children</button>
+    <button id="next_g">next_g</button>
+    <button id="nextAll_c">nextAll_c</button>
+    <button id="nextAll_c_iiclass">nextAll_c_iiclass</button>
+    <button id="nextUntil_a">nextUntil_a</button>
+    <button id="prev_f">prev_f</button>
+    <p>prevUntill, prevAll은 next와 작동 원리가 같다.</p>
+    <div>
+      <div id="a">
+        a
+        <div></div>
+      </div>
+      <div id="b">
+        b
+        <div></div>
+      </div>
+      <div id="c">
+        c
+        <div></div>
+      </div>
+      <div id="d">
+        d
+        <div></div>
+      </div>
+      <div id="e">
+        e
+        <div></div>
+      </div>
+      <div id="f">
+        f
+        <div></div>
+      </div>
+      <div id="g">
+        g
+        <div></div>
+      </div>
+      <div id="h">
+        h
+        <div></div>
+      </div>
+      <div class="ii" id="i">
+        i iiclass
+        <div></div>
+      </div>
+      <div id="j">
+        j
+        <div></div>
+      </div>
+    </div>
+  </body>
+</html>
