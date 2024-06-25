@@ -1,0 +1,40 @@
+/* body에 마진이 있음 */
+body {
+  margin: 0;
+}
+
+div.ani_box1 {
+  width: 100px;
+  height: 100px;
+  font-size: 1rem;
+  padding: 0;
+  margin: 0;
+  background-color: seagreen;
+  position: absolute;
+}
+div.ani_box2 {
+  width: 100px;
+  height: 100px;
+  font-size: 1rem;
+  left: 300px;
+  background-color: orchid;
+  position: absolute;
+}
+div.ani_box3 {
+  width: 100px;
+  height: 100px;
+  font-size: 1rem;
+  left: 300px;
+  background-color: lawngreen;
+}
+div.ani_box4 {
+  width: 100px;
+  height: 100px;
+  font-size: 1rem;
+  left: 300px;
+  background-color: black;
+}
+.under {
+  position: absolute;
+  margin-top: 300px;
+}

@@ -1,0 +1,14 @@
+div {
+  width: 200px;
+  height: 200px;
+  display: none;
+}
+div#a {
+  background-color: blue;
+}
+div#b {
+  background-color: red;
+}
+div#c {
+  background-color: green;
+}

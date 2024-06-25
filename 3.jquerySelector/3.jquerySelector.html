@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3.jquerySelector</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="3.jquerySelector.js"></script>
+  </head>
+  <body>
+    <h1>jQuery Selector Practice</h1>
+    <p class="first">
+      제이쿼리 선택자 연습 <span class="first">자식 태그</span>
+    </p>
+    <p>연습만이 살길</p>
+    <button>버튼 클릭 1</button>
+    <button>버튼 클릭 2</button>
+    <button class="first">class=first</button>
+    <button class="second">class=second</button>
+    <div>
+      <h1>colon 연습</h1>
+      <ul>
+        <li>신라면</li>
+        <li>삼양라면</li>
+        <li>불닭볶음면</li>
+      </ul>
+      <ul>
+        <li>사자</li>
+        <li>호랑이</li>
+        <li>늑대</li>
+      </ul>
+      <button class="cf">colon first</button>
+      <button class="cfc">colon first-child</button>
+      <button class="cl">colon last</button>
+      <button class="clc">colon last-child</button>
+    </div>
+
+    <div>
+      <h1>속성 선택해서 바꾸기</h1>
+      <div>
+        <a href="test">a tag</a>
+        <a href="test">a tag</a>
+        <a>no href</a>
+      </div>
+      <button class="href">href change</button>
+      <div>
+        <a href="http://naver.com">naver</a>
+        <a href="http://daum.net">daum</a>
+        <div>
+          <button class="naver">naver</button>
+          <button class="not_naver">not_naver</button>
+          <button class="daum">daum</button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h1>테이블 만들기</h1>
+      <table border="2">
+        <tr>
+          <th>회사</th>
+          <th>국가</th>
+        </tr>
+        <tr>
+          <th>삼성</th>
+          <th>대한민국</th>
+        </tr>
+        <tr>
+          <th>도요타</th>
+          <th>일본</th>
+        </tr>
+        <tr>
+          <th>엔비디아</th>
+          <th>미국</th>
+        </tr>
+        <tr>
+          <th>하웨이?</th>
+          <th>중국</th>
+        </tr>
+      </table>
+      <button class="table">table</button>
+    </div>
+  </body>
+</html>

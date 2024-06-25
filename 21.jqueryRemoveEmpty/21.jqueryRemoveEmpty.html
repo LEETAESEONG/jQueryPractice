@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>21.jqueryRemoveEmpty</title>
+    <!-- integrity와 crossorigin (보안관련)은 실습할 때는 없어도 무방하다. -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function () {
+        $("#remove1").on("click", function () {
+          $(".div1").remove();
+        });
+        // 컴마 실수하지 말것
+        $("#remove2").on("click", function () {
+          $("p").remove(".red, .yellow");
+        });
+        $("#empty1").on("click", function () {
+          $(".div1").empty();
+        });
+        // empty는 그런 것 없다.
+        $("#empty2").on("click", function () {
+          $("p").empty(".red, .yellow");
+        });
+      });
+    </script>
+    <style>
+      div {
+        background-color: pink;
+        padding: 10px;
+        width: 400px;
+        height: 300px;
+        margin: 10px;
+        border: 1px solid black;
+      }
+      .red {
+        background-color: red;
+      }
+      .yellow {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="remove1">remove</button>
+    <button id="remove2">remove red and yellow</button>
+    <button id="empty1">empty</button>
+    <button id="empty2">empty red and yellow</button>
+    <div class="div1">
+      <p>Have you lived in Seoul?</p>
+      <p class="red">Have you lived in Seoul?</p>
+      <p>Have you lived in Seoul?</p>
+      <p class="yellow">Have you lived in Seoul?</p>
+      <p>Have you lived in Seoul?</p>
+    </div>
+  </body>
+</html>

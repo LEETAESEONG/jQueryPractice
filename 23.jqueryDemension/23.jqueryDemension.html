@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>23.jqueryDemension</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function () {
+        $("#btn1").on("click", function () {
+          $("#size1").text(
+            `width = ${$(".dim").width()}, height = ${$(".dim").height()}`
+          );
+        });
+        $("#btn2").on("click", function () {
+          $("#size2").text(
+            `width = ${$(".dim").innerWidth()}, height = ${$(
+              ".dim"
+            ).innerHeight()}`
+          );
+        });
+        $("#btn3").on("click", function () {
+          $("#size3").text(
+            `width = ${$(".dim").outerWidth()}, height = ${$(
+              ".dim"
+            ).outerHeight()}`
+          );
+        });
+        $("#btn4").on("click", function () {
+          $("#size4").text(
+            `width = ${$(".dim").outerWidth(true)}, height = ${$(
+              ".dim"
+            ).outerHeight(true)}`
+          );
+        });
+      });
+    </script>
+    <style>
+      button {
+        width: 120px;
+        height: 40px;
+      }
+      div.dim {
+        width: 200px;
+        height: 200px;
+        padding: 10px;
+        margin: 10px;
+        background-color: indianred;
+        border: 10px solid rebeccapurple;
+      }
+      div.dim2 {
+        width: 200px;
+        height: 200px;
+        padding: 10px;
+        margin: 10px;
+        background-color: indianred;
+        border: 10px solid rebeccapurple;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <button id="btn1">height, width</button>
+      <span>크기 출력 : </span>
+      <span id="size1"></span>
+    </div>
+    <div>
+      <button id="btn2">inner h, w</button>
+      <span>크기 출력 : </span>
+      <span id="size2"></span>
+      <span>(padding)</span>
+    </div>
+    <div>
+      <button id="btn3">outer h, w</button>
+      <span>크기 출력 : </span>
+      <span id="size3"></span>
+      <span>(padding, border)</span>
+    </div>
+    <div>
+      <button id="btn4">outer true h, w</button>
+      <span>크기 출력 : </span>
+      <span id="size4"></span>
+      <span>(padding, border, margin)</span>
+    </div>
+    <div class="dim"></div>
+    <div class="dim2">
+      box-sizing
+      <br />
+      border-box
+    </div>
+    <p>
+      크기 출력 값이 소수점이 나오는 이유 :
+      <br />
+      ctrl과 마우스 휠을 사용하여 크기를 조절해보면 다르게 나오는 것을 알 수
+      있다.
+      <br />
+      노트북의 경우 배율을 80프로로 만들면 된다.
+    </p>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>12.jquerySlide</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      div.div_menu {
+        width: 300px;
+        display: none;
+        background-color: violet;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn_menu_slideDown">slide down</button>
+    <button class="btn_menu_slideUp">slide up</button>
+    <button class="btn_menu_slideToggle">slide toggle</button>
+    <button class="btn_menu_show">show</button>
+    <button class="btn_menu_hide">hide</button>
+
+    <div class="div_menu">라면<br />짬뽕<br />마라탕</div>
+
+    <script>
+      $("button.btn_menu_slideDown").on("click", function () {
+        $("div.div_menu").slideDown("slow");
+      });
+      $("button.btn_menu_slideUp").on("click", function () {
+        $("div.div_menu").slideUp("slow");
+      });
+      $("button.btn_menu_slideToggle").on("click", function () {
+        $("div.div_menu").slideToggle("fast");
+      });
+      // show는 대각선으로
+      $("button.btn_menu_show").on("click", function () {
+        $("div.div_menu").show("slow");
+      });
+      // hide도 대각선으로
+      $("button.btn_menu_hide").on("click", function () {
+        $("div.div_menu").hide("slow");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+}
+div.ani_box {
+  width: 100px;
+  height: 100px;
+  background-color: yellowgreen;
+  position: relative;
+  font-size: 15px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+div.ani_box2 {
+  width: 100px;
+  height: 100px;
+  background-color: salmon;
+  position: relative;
+  font-size: 15px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+div.outer {
+  width: 400px;
+  height: 400px;
+  background-color: beige;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}

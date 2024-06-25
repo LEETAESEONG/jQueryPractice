@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>19.jqueryApPre</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function () {
+        $("#btn_append").on("click", function () {
+          $("p").append(" append 입니다.");
+        });
+        $("#btn_prepend").on("click", function () {
+          $("p").prepend("Hello. 반가워요. ");
+        });
+        $("#btn_ul_append").on("click", function () {
+          $("ul").append("<li>뒤에서 추가하기</li>");
+        });
+        $("#btn_ul_prepend").on("click", function () {
+          $("ul").prepend("<li>앞에서 추가하기</li>");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Append Prepend</h1>
+    <button id="btn_append">Append</button>
+    <button id="btn_prepend">Prepend</button>
+    <p>Glad to meet you!</p>
+    <div>
+      <h1>Ul Practice</h1>
+      <ul>
+        <li>first item</li>
+        <li>second item</li>
+        <li>third item</li>
+      </ul>
+    </div>
+    <button id="btn_ul_append">Ul Append</button>
+    <button id="btn_ul_prepend">Ul Prepend</button>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>22.jqueryClass</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .bgc_blue {
+        background-color: blue;
+      }
+      .color_white {
+        color: white;
+      }
+    </style>
+    <script>
+      $(function () {
+        $("#add_class").on("click", function () {
+          // 컴마가 붙지 않는다. 주의할 것
+          $("#target").addClass("bgc_blue color_white");
+        });
+        $("#remove_class").on("click", function () {
+          // 전부 다 지우기
+          // $("#target").removeClass();
+          // 하나만 지우기
+          // $("#target").removeClass("color_white");
+          // 여러 개 지우기
+          $("#target").removeClass("bgc_blue color_white");
+        });
+        // 전부 똑같음, 하나만 넣어도 되고 전부 넣어도 된다.
+        // 단 remove만 요소 하나도 없어도 작동된다.
+        $("#toggle_class").on("click", function () {
+          $("#target").toggleClass("bgc_blue");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button id="add_class">add</button>
+    <button id="remove_class">remove</button>
+    <button id="toggle_class">toggle</button>
+    <p id="target">Hello. It's me.</p>
+  </body>
+</html>

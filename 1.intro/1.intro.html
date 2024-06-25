@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>INTRO</title>
+    <!-- https://releases.jquery.com/에 접속해서 jQuery 3.x 버전 선택
+        - uncompressed : 모든 코드가 읽기 쉽게 포맷팅된 상태로 포함되어 있습니다. 디버깅과 개발 시 유용합니다. (용량이 큼)
+        - minified : 공백과 주석을 제거하여 파일 크기를 줄였습니다. 실제 배포 시 사용합니다.
+        - slim : Ajax와 Effects 모듈이 제외된 버전입니다. 기능이 축소되어 크기가 더 작습니다.
+        - slim minified : Slim 버전에서 공백과 주석을 제거한 최소화된 파일입니다. 작은 크기로 배포 시 사용합니다.
+        현재는 minified를 사용했다.
+    -->
+    <!-- integrity 속성
+        - 기능: 브라우저가 파일의 무결성을 확인하도록 합니다.
+        - 사용법: 파일의 SHA-256 해시를 포함합니다.
+        - 동작: 파일이 로드될 때, 해시가 일치하지 않으면 로드를 중단합니다.
+    -->
+    <!-- crossorigin 속성 
+        - 기능: CORS(Cross-Origin Resource Sharing)를 제어합니다.
+        - 사용법:
+            - anonymous: 인증 정보 없이 요청.
+use-        - credentials: 쿠키 및 인증 정보 포함.
+     -->
+    <!-- 이 속성들은 보안과 리소스 공유를 관리하여 안전한 웹 애플리케이션을 구축하는 데 도움을 줍니다. -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(document).ready(function () {
+        $("h1").click(function () {
+          $(this).hide();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>jquery first</h1>
+    <h1>click tag</h1>
+    <h1>welcome</h1>
+  </body>
+</html>
