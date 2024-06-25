@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>25.jqueryParent</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function () {
+        $("#parent_p").on("click", function () {
+          $(".ancestors p").parent().css({
+            color: "aquamarine",
+            border: "5px solid aquamarine",
+          });
+        });
+        $("#parent_span").on("click", function () {
+          $("span").parent().css({
+            border: "5px solid green",
+            color: "green",
+          });
+        });
+        $("#parent_a_class").on("click", function () {
+          $("span.a").parent().css({
+            border: "5px solid red",
+            color: "red",
+          });
+        });
+        // 필터를 사용해서 선택할 수 있음
+        $("#parents_p").on("click", function () {
+          $(".ancestors p").parents().css({
+            color: "aquamarine",
+            border: "5px solid aquamarine",
+          });
+        });
+        $("#parents_span").on("click", function () {
+          $("span").parents().css({
+            border: "5px solid green",
+            color: "green",
+          });
+        });
+        // 컴마 주의
+        $("#parents_a_class").on("click", function () {
+          $("span.a").parents("p, div").css({
+            border: "5px solid red",
+            color: "red",
+          });
+        });
+        // ============== 주의 ==============
+        // x 지점 이전까지
+        $("#parentsUntil_span").on("click", function () {
+          // div 이전까지 간다.
+          // body를 넣으면 body 전 단계 까지
+          $("span").parentsUntil("div").css({
+            color: "aquamarine",
+            border: "5px solid aquamarine",
+          });
+        });
+        $("#parentsUntil_ancestors").on("click", function () {
+          // div 이전까지 간다.
+          // body를 넣으면 body 전 단계 까지
+          $("span").parentsUntil("div.ancestors").css({
+            color: "aquamarine",
+            border: "5px solid aquamarine",
+          });
+        });
+      });
+    </script>
+    <style>
+      button {
+        width: 120px;
+        height: 40px;
+      }
+      .ancestors * {
+        display: block;
+        border: 5px solid black;
+        color: orchid;
+        padding: 10px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ancestors">
+      ancestors
+      <div>
+        <p>parent p<span class="a">a_class span</span></p>
+      </div>
+      <p>p</p>
+      <p>parent p<span>span</span></p>
+      <p>p</p>
+    </div>
+    <h1>Parent</h1>
+    <button id="parent_p">parent p</button>
+    <button id="parent_span">parent span</button>
+    <button id="parent_a_class">parent a_class</button>
+    <h1>Parents</h1>
+    <p>현 시점을 기준으로 부모의 부모의 부모의 ...</p>
+    <button id="parents_p">parents p</button>
+    <button id="parents_span">parents span</button>
+    <button id="parents_a_class">parents a_class</button>
+    <h1>ParentsUntil</h1>
+    <p>현 시점을 기준으로 x지점 이전 까지</p>
+    <button id="parentsUntil_span" style="width: 400px">
+      parentsUntil from span to under the div
+    </button>
+    <button id="parentsUntil_ancestors" style="width: 400px">
+      parentsUntil from span to under the div ancestors
+    </button>
+  </body>
+</html>
