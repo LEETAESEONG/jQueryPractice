@@ -9,4 +9,10 @@
         - Highlight Matching Tag
         - jQuery Code snippets
 
+- 29번을 진행 할 때 주의 사항
+    - 외부 폴더에서 29.jqueryAJAX.html을 더블클릭해서 들어갈 수도 있다.
+    - 하지만 버튼을 클릭하면 console에 error가 뜬다.
+    - cors 에러이기 때문에 Live Server로 켜서 하면 잘 진행된다.
+    - html파일을 마우스 오른쪽 클릭한 다음 Open with Live Server를 클릭하면 된다.
+
 ### ※ 출처 : [왕초보 홈페이지만들기](https://youtu.be/0m6DWr1CxeE?si=8V62OCuNd0czERlP)
