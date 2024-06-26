@@ -9,8 +9,18 @@
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
     ></script>
+    <script>
+      $(function () {
+        $("#btn_load").on({
+          click: function () {
+            $("#load1").load("./29.jqueryAJAX.txt");
+          },
+        });
+      });
+    </script>
   </head>
   <body>
-    
+    <button id="btn_load">btn_load</button>
+    <p id="load1">===================================================</p>
   </body>
 </html>
