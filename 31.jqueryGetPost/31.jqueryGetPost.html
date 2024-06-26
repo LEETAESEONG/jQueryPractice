@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>31.jqueryGetPost</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function () {
+        $("#btn_get").on({
+          click: function () {
+            $.get("31.outer.html", function (data, status) {
+              console.log(data, status);
+            });
+          },
+        });
+        $("#btn_post").on({
+          click: function () {
+            $.post(
+              "31.outer.html",
+              { name: "Taeseong Lee", city: "New York" },
+              function (data, status) {
+                console.log(status);
+              }
+            );
+          },
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>GET vs. POST</h1>
+    <p>console.log를 확인하세요. => F12</p>
+    <button id="btn_get">get</button>
+    <button id="btn_post">post</button>
+  </body>
+</html>
