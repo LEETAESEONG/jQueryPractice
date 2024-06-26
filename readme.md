@@ -18,5 +18,16 @@
 - 31번 진행 시 주의 사항
   - get은 test 해볼 수 있다.
   - post는 test 해볼 수 없고 405에러가 나온다.
+- 32번 요약
+  ```js
+  const dollar = $.noConflict();
+  dollar(function () {
+    dollar("#btn_noConflict").on({
+      click: function () {
+        dollar("#div_noConflict").text("버튼 클릭이용");
+      },
+    });
+  });
+  ```
 
 ### ※ 출처 : [왕초보 홈페이지만들기](https://youtu.be/0m6DWr1CxeE?si=8V62OCuNd0czERlP)
