@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>30.jqueryLoad</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function () {
+        $("#btn_first").on({
+          click: function () {
+            $("#div_first").load("./30.outer.html #first");
+          },
+        });
+        $("#btn_callback").on({
+          click: function () {
+            $("#div_callback").load(
+              "./30.outer.html",
+              function (responseText, statusText, xhr) {
+                if (statusText == "error") {
+                  alert("파일을 찾을 수 없습니다.");
+                }
+                console.log(xhr.status);
+              }
+            );
+          },
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>$(selector).load(url, data, callback);</h1>
+    <p>url로 data를 넘기고 callback을 실행</p>
+    <button id="btn_first">outer.html의 id = first 가져오기</button>
+    <button id="btn_callback">callback</button>
+    <p>outer.html id = first :</p>
+    <div id="div_first"></div>
+    <p style="color: red">
+      div 태그를 가져오기 때문에 span으로 묶어도 줄이 바뀐다.
+    </p>
+    <p>callback으로 다 가져오기</p>
+    <div id="div_callback"></div>
+  </body>
+</html>
