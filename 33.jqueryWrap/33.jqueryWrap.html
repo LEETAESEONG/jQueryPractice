@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>33.jqueryWrap</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const dollar = $.noConflict();
+      dollar(function () {
+        dollar("#wrap").on({
+          click: function () {
+            dollar("p").wrap("<div></div>");
+          },
+        });
+        dollar("#wrap_double").on({
+          click: function () {
+            // <div></div><div></div> = <div></div> 하나만 적용된다.
+            dollar("p").wrap("<div></div><div></div>");
+          },
+        });
+        dollar("#wrapAll").on({
+          click: function () {
+            dollar("p").wrapAll("<div></div>");
+          },
+        });
+        dollar("#wrapInner").on({
+          click: function () {
+            dollar("p").wrapInner("<b></b>");
+          },
+        });
+        dollar("#unwrap").on({
+          click: function () {
+            dollar("p").unwrap();
+          },
+        });
+        dollar("#unwrap_aclass").on({
+          click: function () {
+            dollar(".a").unwrap();
+          },
+        });
+      });
+    </script>
+    <style>
+      p {
+        background-color: lightgreen;
+      }
+      div {
+        padding: 5px;
+        border: 5px solid darkblue;
+      }
+      main {
+        border: 5px solid lightgreen;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Wrap 메소드</h1>
+    <ul>
+      <li>
+        wrap() <button id="wrap">wrap</button> <span>각각 하나씩 감싸기</span>
+      </li>
+      <li>
+        wrap double(함수 아님) <button id="wrap_double">wrap_double</button
+        ><span> div 안에 div로 감싸기</span>
+      </li>
+      <li>
+        wrapAll() <button id="wrapAll">wrapAll</button
+        ><span> 선택자를 한번에 감싸기</span>
+      </li>
+      <li>
+        wrapInner() <button id="wrapInner">wrapInner</button
+        ><span> 선택한 것 안쪽 감싸기, p태그 내부를 b태그로 감싸기</span>
+      </li>
+      <li>
+        unwrap() <button id="unwrap">unwrap</button
+        ><span> 현재 있는 태그에서 벗어나기</span>
+        <button id="unwrap_aclass">unwrap aclass</button>
+      </li>
+    </ul>
+    <main>
+      <div>
+        <p>
+          "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
+          consectetur, adipisci velit..."
+        </p>
+        <p>
+          "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
+          consectetur, adipisci velit..."
+        </p>
+        <p>
+          "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
+          consectetur, adipisci velit..."
+        </p>
+        <p>
+          "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
+          consectetur, adipisci velit..."
+        </p>
+        <div>
+          <div class="a">Aclass</div>
+        </div>
+      </div>
+      <p>
+        wrapAll wrapAll wrapAll wrapAll 이게 안으로 들어감 wrapAll wrapAll
+        wrapAll wrapAll
+      </p>
+    </main>
+  </body>
+</html>
